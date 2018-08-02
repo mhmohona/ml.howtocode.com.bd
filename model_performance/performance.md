@@ -81,7 +81,7 @@ from sklearn import metrics
 
 accuracy = metrics.accuracy_score(y_train, prediction_from_trained_data)
 
-print "Accuracy of our naive bayes model is : {0:.4f}".format(accuracy)
+print ("Accuracy of our naive bayes model is : {0:.4f}".format(accuracy))
 
 ```
 
@@ -126,19 +126,19 @@ prediction_from_test_data = nb_model.predict(X_test)
 
 accuracy = metrics.accuracy_score(y_test, prediction_from_test_data)
 
-print "Accuracy of our naive bayes model is: {0:0.4f}".format(accuracy)
+print ("Accuracy of our naive bayes model is: {0:0.4f}".format(accuracy))
 
 ```
 
 ### আউটপুট
 
 ```
-Accuracy of our naive bayes model is: 0.7359
+Accuracy of our naive bayes model is: 0.7000
 ```
 
 ![p_t](http://i.imgur.com/7hPm7Cz.gif)
 
-তার মানে হল সিলেবাসের বাইরে থেকে প্রশ্ন জিজ্ঞাসা করলেও সে ৭০% অ্যাকুরেসির সাথে উত্তর দিতে পারছে, তারমানে তার দেওয়া উত্তরের ৭৩% সঠিক এবং বাকিটা ভুল।
+তার মানে হল সিলেবাসের বাইরে থেকে প্রশ্ন জিজ্ঞাসা করলেও সে ৭০% অ্যাকুরেসির সাথে উত্তর দিতে পারছে, তারমানে তার দেওয়া উত্তরের ৭০% সঠিক এবং বাকিটা ভুল।
 
 আমরা এটাই  চেয়েছিলাম, অর্থাৎ আমরা যদি এই ট্রেইন্ড মডেলে এবার নতুন পরীক্ষিত কোন ব্যক্তির ডেটা ইনপুট দেই তাহলে তার উত্তর সঠিক হওয়ার সম্ভাবনা ৭৩%। যদি মডেল বলে নতুন ব্যক্তির ডায়বেটিস হতে পারে, তার likelihood হল ৭০%। 
 
@@ -155,10 +155,10 @@ Accuracy of our naive bayes model is: 0.7359
 আপাতত জেনে রাখুন কনফিউশন ম্যাট্রিক্স দিয়ে আমরা জানতে পারব আমাদের মডেলের পার্ফর্মেন্স কীরকম। তাহলে নিচের কোডটি লিখুন,
 
 ```python
-print "Confusion Matrix"
+print ("Confusion Matrix")
 
 # labels for set 1=True to upper left and 0 = False to lower right
-print "{0}".format(metrics.confusion_matrix(y_test, prediction_from_test_data, labels=[1, 0]))
+print ("{0}".format(metrics.confusion_matrix(y_test, prediction_from_test_data, labels=[1, 0])))
 ```
 
 ![performance2](http://i.imgur.com/z609uE0.gif)
@@ -214,10 +214,10 @@ TN = আসল আউটপুট হল ০ এবং আমাদের মড
 ক্লাসিফিকেশন রিপোর্ট জেনারেট হয় আসলে কনফিউশন ম্যাট্রিক্সের ডেটার উপরে। ক্লাসিফিকেশন রিপোর্ট দেখার জন্য নিচের স্টেটমেন্ট রান করুন,
 
 ```python
-print "Classification Report"
+print ("Classification Report")
 
 # labels for set 1=True to upper left and 0 = False to lower right
-print "{0}".format(metrics.classification_report(y_test, prediction_from_test_data, labels=[1, 0]))
+print ("{0}".format(metrics.classification_report(y_test, prediction_from_test_data, labels=[1, 0])))
 ```
 
 ### রিপোর্ট আউটপুট
